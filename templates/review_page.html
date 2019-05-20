@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% if movie_detail %}
+
+<div class="movie-detail col-md-6 offset-md-3">
+    <div class="movie-content">
+        <div class="movie-name">
+            <h2>{{ movie_detail.Title }}</h2>
+        </div>
+        <br>
+        <div class="movie-img">
+            <img src="{{ movie_detail.Poster }}" alt="">
+        </div>
+        <div class="movie-release">
+            <p><strong>Released On: {{ movie_detail.Released }}</strong></p>
+        </div>
+        <div class="movie-rating">
+            <p><strong>IMDB Rating: {{ movie_detail.imdbRating }}/10</strong></p>
+        </div>
+        <div class="movie-genre">
+            <p><strong>Genre: {{ movie_detail.Genre }}</strong></p>
+        </div>
+        <div class="movie-director">
+            <p><strong>Director: {{ movie_detail.Director }}</strong></p>
+        </div>
+        <div class="movie-runtime">
+            <p><strong>Runtime: {{ movie_detail.Runtime }}</strong></p>
+        </div>
+        <div class="movie-description">
+            <p><strong>Description: {{ movie_detail.Plot }}</strong></p>
+        </div>
+        <br>
+    </div>
+</div>
+
+{% endif %}
+
+
+{% endblock %}

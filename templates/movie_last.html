@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="myform">
+    <form action="{% url 'movie_search' %}">
+        <input type="text" name="query" id="" required="true" placeholder="Enter keyword for movie search">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+{% if movie_list %}
+
+<div class="row">
+    {% for movie in movie_list.Search %}
+    <div class="mycard col-9 col-sm-6 col-md-6 col-lg-4">
+        <a href="{% url 'movie_detail'  pk=movie.imdbID %}">
+            <div class="card-content ">
+                <div class="card-img">
+                    <img src="{{ movie.Poster }}" alt="">
+                </div>
+                <div class="card-title">
+                    <h5> <strong>{{ movie.Title }}</strong></h5>
+                </div>
+                <div class="card-year">
+                    <p>Year: {{ movie.Year }}</p>
+                </div>
+                <div class="card-type">
+                    <p>Type: {{ movie.Type }}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="{% url 'first_page' quer=quer %}">1</a></li>
+        <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
+        <li class="page-item "><a class="page-link" href="{% url 'prev_page' prev=prev  quer=quer %}">{{ prev }}</a></li>
+        <li class="page-item disabled"><a class="page-link" href="#">{{ page }}</a></li>
+    </ul>
+</nav>
+
+{% endif %}
+
+{% endblock %}

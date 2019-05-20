@@ -1,0 +1,204 @@
+a:hover{
+    text-decoration: none !important;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul li {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+*{
+    box-sizing: border-box;
+    border: 0px;
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+p{
+    margin: 0 !important;
+}
+
+.signup-button{
+    margin-top: 15px;
+    background-color: #1DE9B6;
+    border-radius: 5px;
+    width: 14%;
+    font-size: 20px;
+    font-weight: 700;
+    transition: all 0.5s;
+}
+
+.signup-button:hover{
+    transform: scale(1.05);
+}
+
+input{
+    border: 1px solid black;
+}
+input:focus{
+    outline: none !important;
+}
+
+button:focus{
+    outline: 0 !important;
+}
+
+
+.bg-color{
+    background-color: #00BFA5 !important;
+}
+
+.nav-link{
+    font-size: 20px !important;
+    font-weight: 700;
+    color: white !important;
+    transition: all 0.5s;
+    border-radius: 10px;
+}
+
+.nav-link:hover{
+    transform: scale(1.05);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.mycard{
+    position: relative;
+    padding: 5px 5px;
+    margin-top: 20px;
+}
+.card-content{
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    padding: 2px 5px 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.card-img{
+    height: 320px !important;
+    width: 100%;
+}
+.card-img img{
+    height: 320px;
+    width: 100%;
+    padding: 0 0 10px !important;
+}
+.card-content:hover{
+    transform: scale(1.02);
+}
+
+
+.myform{
+    padding: 5px 15px;
+}
+
+.myform input{
+    font-size: 24px;
+    padding: 1px 10px;
+    width: 90%;
+    border-radius: 5px;
+    border: 0.5px solid black;
+}
+
+.myform button{
+    width: 20%;
+    margin-top: 10px;
+    font-size: 24px;
+    border-radius: 5px;
+    background-color: #1DE9B6;
+    transition: all 0.5s;
+}
+ .myform button:hover{
+     transform: scale(1.05);
+ }
+
+ .movie-content{
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px 15px;
+ }
+
+ .movie-img{
+   padding: 0 0 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ .movie-img img{
+    height: 400px;
+    width: 65%;
+ }
+.movie-description{
+    margin-top: 10px;
+}
+.want-review{
+    margin-top: 20px;
+}
+.home-card{
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.5s;
+    color: black !important;
+}
+.home-card:hover{
+    color: black !important;
+}
+
+.home-card:hover{
+    transform: scale(1.05);
+}
+
+.home-icon{
+    font-size: 50px;
+    text-align: center;
+}
+
+.icon-detail{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+.pagination{
+    margin-top: 20px;
+}
+
+.page-link{
+    font-size: 24px !important;
+    padding: auto 10px !important;
+}
+
+.form-hide{
+    opacity: 0 !important;
+}
+
+
+
+@media only screen and (max-width: 400px){
+    .col-9{
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+    }
+    .movie-img img{
+        width: 95% !important;
+    }
+}

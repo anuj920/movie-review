@@ -1,0 +1,271 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="col-8">
+    <br>
+    <h1>Review Page</h1>
+    <br>
+    <div class="rating-box" style="width: 100%;
+    position: relative;
+    padding: 10px 0;">
+        <div class="rating-line" style="height: 5px;
+        width: 100%;
+        background: #5C6BC0;
+        border-radius: 4px;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);">
+            <div id="part1"
+                style="left: 0%;height:100%;position: absolute;top: 30%;display: inline-block;width: 10%;cursor: pointer;">
+            </div>
+            <div id="part2"
+                style="left: 10% ;height:100%;position: absolute;top: 30%;display: inline-block;width: 10%;cursor: pointer;">
+            </div>
+            <div id="part3"
+                style="left: 20% ;height:100%;position: absolute;top: 30%;display: inline-block;width: 10%;cursor: pointer;">
+            </div>
+            <div id="part4"
+                style="left: 30% ;height:100%;position: absolute;top: 30%;display: inline-block;width: 10%;cursor: pointer;">
+            </div>
+            <div id="part5"
+                style="left: 40% ;height:100%;position: absolute;top: 30%;display: inline-block;width: 10%;cursor: pointer;">
+            </div>
+            <div id="part6"
+                style="left: 50% ;height:100%;position: absolute;top: 30%;display: inline-block;width: 10%;cursor: pointer;">
+            </div>
+            <div id="part7"
+                style="left: 60% ;height:100%;position: absolute;top: 30%;display: inline-block;width: 10%;cursor: pointer;">
+            </div>
+            <div id="part8"
+                style="left: 70% ;height:100%;position: absolute;top: 30%;display: inline-block;width: 10%;cursor: pointer;">
+            </div>
+            <div id="part9"
+                style="left: 80% ;height:100%;position: absolute;top: 30%;display: inline-block;width: 10%;cursor: pointer;">
+            </div>
+            <div id="part10"
+                style="left: 90% ;height:100%;position: absolute;top: 30%;display: inline-block;width: 10%;cursor: pointer;">
+            </div>
+        </div>
+        <div class="rating-circle" style="left: 48%;
+        height: 20px;
+        width:20px;
+        background: #5C6BC0;
+        border: 3px solid white;
+        border-radius: 50%;
+        position: absolute;
+        top: 15%;
+        transition: all 1s;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);"></div>
+    </div>
+
+    <div class="categories" style="margin-top: 50px">
+        <div class="row">
+            <div class="" style=" padding: 5px 25px;">
+                <div class="cate-content" id="less" style="cursor: pointer;
+                padding: 5px 25px 2px;
+                text-align: center;
+                border: 1px solid grey;
+                border-radius: 20px;
+                color: grey;
+                margin-top: 30px;">
+                    <h5>Less Likely</h5>
+                </div>
+            </div>
+            <div class="" style=" padding: 0 25px;">
+                <div class="cate-content" id="very" style="cursor: pointer;
+                padding: 5px 25px 2px;
+                text-align: center;
+                border: 1px solid grey;
+                background: #5C6BC0;
+                border-radius: 20px;
+                color: white;
+                margin-top: 30px;">
+                    <h5>Very Likely</h5>
+                </div>
+            </div>
+            <div class="" style=" padding: 0 25px;">
+                <div class="cate-content" id="extreme" style="cursor: pointer;
+                padding: 5px 25px 2px;
+                text-align: center;
+                border: 1px solid grey;
+                border-radius: 20px;
+                color: grey;
+                margin-top: 30px;">
+                    <h5>Extremely Likely</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <form method="POST" class="post-form" style="margin-top: 30px;">
+        {% csrf_token %}
+        <p>Rating: </p>
+        <input type="number" name="reviewrating" value="5" min="1" max="10" required="" id="id_reviewrating"
+            class="form-hide" style="width: 200px;border-radius: 20px;font-size: 20px;padding: 0 15px;">
+        <br>
+        <br>
+        <p>Review Category:</p>
+        <input type="text" name="reviewcategory" value="Very" maxlength="100" required="" id="id_reviewcategory"
+            style="width: 200px;border-radius: 20px;font-size: 20px; padding: 0 15px;">
+        <button type="submit" class="save"
+            style="width: 150px; background: #5C6BC0;border-radius: 20px;font-size: 20px;display: block;margin-top: 30px;color: white;padding: 5px 0;">Save</button>
+    </form>
+
+    <br>
+    <br>
+
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $("#less").click(function () {
+            $("#less").css({
+                "background": "#5C6BC0",
+                "color": "white"
+            });
+            $("#very").css({
+                "background": "white",
+                "color": "grey"
+            });
+            $("#extreme").css({
+                "background": "white",
+                "color": "grey"
+            });
+            $("input[name='reviewcategory']").val("Less");
+        });
+
+        $("#very").click(function () {
+            $("#very").css({
+                "background": "#5C6BC0",
+                "color": "white"
+            });
+            $("#less").css({
+                "background": "white",
+                "color": "grey"
+            });
+            $("#extreme").css({
+                "background": "white",
+                "color": "grey"
+            });
+            $("input[name='reviewcategory']").val("Very");
+        });
+
+        $("#extreme").click(function () {
+            $("#extreme").css({
+                "background": "#5C6BC0",
+                "color": "white"
+            });
+            $("#very").css({
+                "background": "white",
+                "color": "grey"
+            });
+            $("#less").css({
+                "background": "white",
+                "color": "grey"
+            });
+            $("input[name='reviewcategory']").val("Extreme");
+        });
+    });
+
+
+
+
+    $(document).ready(function () {
+        $("#part1").click(function () {
+            $(".rating-circle").css({
+                "left": "8%"
+            });
+            $("input[name='reviewrating']").val(1);
+        });
+    });
+
+    $(document).ready(function () {
+        $("#part2").click(function () {
+            $(".rating-circle").css({
+                "left": "18%"
+            });
+            $("input[name='reviewrating']").val(2);
+        });
+    });
+
+    $(document).ready(function () {
+        $("#part3").click(function () {
+            $(".rating-circle").css({
+                "left": "28%"
+            });
+            $("input[name='reviewrating']").val(3);
+        });
+    });
+
+    $(document).ready(function () {
+        $("#part4").click(function () {
+            $(".rating-circle").css({
+                "left": "38%"
+            });
+            $("input[name='reviewrating']").val(4);
+        });
+    });
+
+    $(document).ready(function () {
+        $("#part5").click(function () {
+            $(".rating-circle").css({
+                "left": "49%"
+            });
+            $("input[name='reviewrating']").val(5);
+        });
+    });
+
+    $(document).ready(function () {
+        $("#part6").click(function () {
+            $(".rating-circle").css({
+                "left": "60%"
+            });
+            $("input[name='reviewrating']").val(6);
+        });
+    });
+
+    $(document).ready(function () {
+        $("#part7").click(function () {
+            $(".rating-circle").css({
+                "left": "70%"
+            });
+            $("input[name='reviewrating']").val(7);
+        });
+    });
+
+    $(document).ready(function () {
+        $("#part8").click(function () {
+            $(".rating-circle").css({
+                "left": "80%"
+            });
+            $("input[name='reviewrating']").val(8);
+        });
+    });
+
+
+    $(document).ready(function () {
+        $("#part9").click(function () {
+            $(".rating-circle").css({
+                "left": "90%"
+            });
+            $("input[name='reviewrating']").val(9);
+        });
+    });
+
+
+    $(document).ready(function () {
+        $("#part10").click(function () {
+            $(".rating-circle").css({
+                "left": "98%"
+            });
+            $("input[name='reviewrating']").val(10);
+        });
+    });
+</script>
+
+
+{% endblock %}

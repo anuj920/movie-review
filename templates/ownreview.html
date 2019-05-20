@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="row">
+    {% for movie in movie_review_list %}
+    <div class="mycard col-9 col-sm-6 col-md-6 col-lg-4">
+        <a href="{% url 'movie_review_detail'  pk=movie.imdb %}">
+            <div class="card-content ">
+                <div class="card-img">
+                    <img src="{{ movie.poster }}" alt="">
+                </div>
+                <div class="card-title">
+                    <h5> <strong>{{ movie.title }}</strong></h5>
+                </div>
+                <div class="card-year">
+                    <p>Year: {{ movie.year }}</p>
+                </div>
+                <div class="card-type">
+                    <p>Type: {{ movie.movietype }}</p>
+                </div>
+                <div class="card-rating">
+                    <p>Your Rating: {{ movie.reviewrating }}/10</p>
+                </div>
+                <div class="reviewcategory">
+                    <p>Your Category : {{ movie.reviewcategory }} Likely</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    {% empty %}
+
+    <h3 class="jumbotron">You don't Review any Movie yet,<br>Please go to Movie Explore Page,<a href="{% url 'movie_default' %}">Click Here</a></h3>
+
+
+    {% endfor %}
+</div>
+
+
+{% endblock %}

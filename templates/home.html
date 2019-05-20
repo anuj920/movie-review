@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<div class="row">
+    <div class="col-9 col-sm-6 col-md-6 col-lg-4">
+        <a href="{% url 'dash' %}">
+            <div class="home-card">
+                <div class="home-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="icon-detail">
+                    <h5><strong>Dashboard</strong></h5>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-9 col-sm-6 col-md-6 col-lg-4">
+        <a href="{% url 'movie_default' %}">
+            <div class="home-card">
+                <div class="home-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="icon-detail">
+                    <h5><strong>Explore Movie</strong></h5>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-9 col-sm-6 col-md-6 col-lg-4">
+        <a href="{% url 'profile' %}">
+            <div class="home-card">
+                <div class="home-icon">
+                    <i class="fas fa-user-cog"></i>
+                </div>
+                <div class="icon-detail">
+                    <h5><strong>Setting</strong></h5>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
