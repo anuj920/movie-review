@@ -102,13 +102,9 @@
 
     <form method="POST" class="post-form" style="margin-top: 30px;">
         {% csrf_token %}
-        <p>Rating: </p>
         <input type="number" name="reviewrating" value="5" min="1" max="10" required="" id="id_reviewrating"
             class="form-hide" style="width: 200px;border-radius: 20px;font-size: 20px;padding: 0 15px;">
-        <br>
-        <br>
-        <p>Review Category:</p>
-        <input type="text" name="reviewcategory" value="Very" maxlength="100" required="" id="id_reviewcategory"
+        <input type="text" name="reviewcategory" value="Very" maxlength="100" required="" id="id_reviewcategory" class="form-hide"
             style="width: 200px;border-radius: 20px;font-size: 20px; padding: 0 15px;">
         <button type="submit" class="save"
             style="width: 150px; background: #5C6BC0;border-radius: 20px;font-size: 20px;display: block;margin-top: 30px;color: white;padding: 5px 0;">Save</button>

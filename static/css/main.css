@@ -41,9 +41,9 @@ p{
 
 .signup-button{
     margin-top: 15px;
+    padding: 5px 15px;
     background-color: #1DE9B6;
     border-radius: 5px;
-    width: 14%;
     font-size: 20px;
     font-weight: 700;
     transition: all 0.5s;
@@ -120,7 +120,8 @@ button:focus{
 }
 
 .myform button{
-    width: 20%;
+    padding:5px 20px;
+    text-align: center;
     margin-top: 10px;
     font-size: 24px;
     border-radius: 5px;
@@ -188,7 +189,14 @@ button:focus{
 }
 
 .form-hide{
-    opacity: 0 !important;
+    display:none !important;
+}
+
+.myprofile tr{
+    margin: 2px auto;
+}
+.myprofile td{
+    padding: 5px 10px;
 }
 
 
@@ -199,6 +207,9 @@ button:focus{
         flex: 0 0 100% !important;
     }
     .movie-img img{
-        width: 95% !important;
+        width: 100% !important;
+    }
+    .movie-content{
+        padding: 5px 5px;
     }
 }
